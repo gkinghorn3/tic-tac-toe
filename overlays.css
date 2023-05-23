@@ -1,0 +1,20 @@
+.modal {
+  position: fixed;
+  top: 20%;
+  /* left 5% right 5% plus width of 90% ensures modal is in center */
+  left: 5%;
+  width: 90%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+  display: ;
+}
+
+@media (min-width: 48rem) {
+  .modal {
+    /* postion left is 20 rem from center, with 40rem width ensures modal is centered */
+    left: calc(50% - 20rem);
+    width: 40rem;
+  }
+}
