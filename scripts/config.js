@@ -1,4 +1,8 @@
-function openPlayerConfig() {
+function openPlayerConfig(event) {
+  // data attributes are stored as strings so + converts to int
+
+  editedPlayer = event.target.dataset.playerid;
+  console.log(editedPlayer);
   configPopup.style.display = "block";
   configPopupBackdrop.style.display = "block";
 }
@@ -21,4 +25,9 @@ function savePlayerConfig(event) {
     errorOutputElement.textContent = "Please enter a valid name";
     return;
   }
+
+  const updatedPlayerDataElement = document.getElementById(
+    "player-" + editedPlayer + "-data"
+  );
+  updatedPlayerDataElement.children[1].textContent = enteredPlayerName;
 }

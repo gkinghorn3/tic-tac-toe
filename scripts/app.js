@@ -1,3 +1,4 @@
+let editedPlayer = 0;
 // config buttons
 const player1EditBtn = document.getElementById("edit-player-1-btn");
 const player2EditBtn = document.getElementById("edit-player-2-btn");
