@@ -1,4 +1,16 @@
 let editedPlayer = 0;
+
+const players = [
+    {
+        name: '',
+        symbol: 'X'
+    },
+    {
+        name: '',
+        symbol: 'O'
+    },
+];
+
 // config buttons
 const player1EditBtn = document.getElementById("edit-player-1-btn");
 const player2EditBtn = document.getElementById("edit-player-2-btn");

@@ -1,7 +1,7 @@
 function openPlayerConfig(event) {
   // data attributes are stored as strings so + converts to int
 
-  editedPlayer = event.target.dataset.playerid;
+  editedPlayer = +event.target.dataset.playerid;
   console.log(editedPlayer);
   configPopup.style.display = "block";
   configPopupBackdrop.style.display = "block";
@@ -30,7 +30,8 @@ function savePlayerConfig(event) {
     "player-" + editedPlayer + "-data"
   );
   updatedPlayerDataElement.children[1].textContent = enteredPlayerName;
-  configPopup.style.display = "none";
-  configPopupBackdrop.style.display = "none";
 
+  players[editedPlayer - 1].name = enteredPlayerName;
+
+  closePlayerConfig();
 }
