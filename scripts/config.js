@@ -12,6 +12,7 @@ function closePlayerConfig() {
   configPopupBackdrop.style.display = "none";
   errorOutputElement.textContent = "";
   formElement.firstElementChild.classList.remove("input-error");
+  formElement.firstElementChild.lastElementChild.value = '';
 }
 
 function savePlayerConfig(event) {
