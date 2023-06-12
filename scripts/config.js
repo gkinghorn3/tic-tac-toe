@@ -30,4 +30,7 @@ function savePlayerConfig(event) {
     "player-" + editedPlayer + "-data"
   );
   updatedPlayerDataElement.children[1].textContent = enteredPlayerName;
+  configPopup.style.display = "none";
+  configPopupBackdrop.style.display = "none";
+
 }
