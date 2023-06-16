@@ -11,24 +11,30 @@ const players = [
     },
 ];
 
-// config buttons
+
 const player1EditBtn = document.getElementById("edit-player-1-btn");
 const player2EditBtn = document.getElementById("edit-player-2-btn");
 const closeConfigOverlayBtn = document.getElementById("close-config-popup");
+startGameBtnElement = document.getElementById('start-new-game-btn'); 
+const gameFieldElements = document.querySelectorAll('#game-board li');
 
-// overlay and player config popup
 const configPopup = document.getElementById("config-overlay");
 const configPopupBackdrop = document.getElementById("backdrop");
 
 const formElement = document.querySelector("form");
 const errorOutputElement = document.getElementById("config-error");
 
-// buttons
+const gameAreaElement = document.getElementById('active-game');
+
 player1EditBtn.addEventListener("click", openPlayerConfig);
 player2EditBtn.addEventListener("click", openPlayerConfig);
-closeConfigOverlayBtn.addEventListener("click", closePlayerConfig);
-startGameBtn = document.getElementById('start-new-game-btn');
 
+closeConfigOverlayBtn.addEventListener("click", closePlayerConfig);
 
 formElement.addEventListener("submit", savePlayerConfig);
 
+startGameBtnElement.addEventListener('click', startNewGame)
+
+for (const gameFieldElement of gameFieldElements) {
+    gameFieldElement.addEventListener('click', selectGameField);
+}
