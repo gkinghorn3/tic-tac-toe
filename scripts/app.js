@@ -23,8 +23,12 @@ const configPopupBackdrop = document.getElementById("backdrop");
 const formElement = document.querySelector("form");
 const errorOutputElement = document.getElementById("config-error");
 
+// buttons
 player1EditBtn.addEventListener("click", openPlayerConfig);
 player2EditBtn.addEventListener("click", openPlayerConfig);
 closeConfigOverlayBtn.addEventListener("click", closePlayerConfig);
+startGameBtn = document.getElementById('start-new-game-btn');
+
 
 formElement.addEventListener("submit", savePlayerConfig);
+
