@@ -18,7 +18,7 @@ function closePlayerConfig() {
 function savePlayerConfig(event) {
   event.preventDefault();
   const formData = new FormData(event.target);
-  // method of formData object to get the value of a given input
+  // method of formData object to get the value of the given property 
   const enteredPlayerName = formData.get("playername").trim();
 
   if (!enteredPlayerName) {
