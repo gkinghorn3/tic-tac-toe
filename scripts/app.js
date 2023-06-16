@@ -18,6 +18,7 @@ const player2EditBtn = document.getElementById("edit-player-2-btn");
 const closeConfigOverlayBtn = document.getElementById("close-config-popup");
 startGameBtnElement = document.getElementById('start-new-game-btn'); 
 const gameFieldElements = document.querySelectorAll('#game-board li');
+const activePlayerNameElement = document.getElementById('active-player-name');
 
 const configPopup = document.getElementById("config-overlay");
 const configPopupBackdrop = document.getElementById("backdrop");

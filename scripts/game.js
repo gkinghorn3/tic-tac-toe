@@ -3,7 +3,7 @@ function startNewGame() {
         alert('pleaser enter a name for each player')
         return;
     }
-
+    activePlayerNameElement.textContent = players[activePlayer].name;
     gameAreaElement.style.display = 'block';
 }
 
@@ -16,7 +16,9 @@ function switchPlayer() {
 }
 
 function selectGameField(event) {
+    
     event.target.textContent = players[activePlayer].symbol;
     event.target.classList.add('disabled');
     switchPlayer();
+    activePlayerNameElement.textContent = players[activePlayer].name;
 }
