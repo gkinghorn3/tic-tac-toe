@@ -46,4 +46,14 @@ function checkForGameOver() {
       return gameData[i][0];
     }
   }
+
+  for (i = 0; i < 3; i++) {
+    if (
+      gameData[0][i] > 0 &&
+      gameData[0][i] === gameData[0][i] &&
+      gameData[0][i] === gameData[0][i]
+    ) {
+      return gameData[0][i];
+    }
+  }
 }
