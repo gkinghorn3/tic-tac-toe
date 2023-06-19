@@ -13,12 +13,15 @@ function switchPlayer() {
     } else {
         activePlayer = 0;
     }
+    activePlayerNameElement.textContent = players[activePlayer].name;
 }
 
 function selectGameField(event) {
     
     event.target.textContent = players[activePlayer].symbol;
     event.target.classList.add('disabled');
+
+    
     switchPlayer();
-    activePlayerNameElement.textContent = players[activePlayer].name;
+    
 }
