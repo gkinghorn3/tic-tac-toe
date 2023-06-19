@@ -3,6 +3,9 @@ function startNewGame() {
     alert("pleaser enter a name for each player");
     return;
   }
+
+  resetGameStatus();
+
   activePlayerNameElement.textContent = players[activePlayer].name;
   gameAreaElement.style.display = "block";
 }
@@ -10,8 +13,7 @@ function startNewGame() {
 function resetGameStatus() {
     activePlayer = 0;
     currentRound = 1;
-    gameOverElement.firstElementChild.innerHTML = 
-        'You won, <span id="winner-name">PLAYERNAME</span>'
+
     gameOverElement.style.display = 'none';
 
     let gameBoardIndex = 0;
@@ -24,6 +26,8 @@ function resetGameStatus() {
             gameBoardIndex++;
         }
     }
+    // gameOverElement.firstElementChild.innerHTML = 
+    // 'You won, <span id="winner-name">PLAYERNAME</span>'
 }
 
 function switchPlayer() {
@@ -110,8 +114,7 @@ function endGame(winnerId) {
 
   if (winnerId > 0) {
     const winnerName = players[winnerId - 1].name;
-    winnersName.textContent =
-      winnerName + '!';
+    winnersName.textContent = winnerName;
     turnMessage.textContent = '';
   } else {
     gameAreaElement.firstElementChild.textContent = "it's a draw!";

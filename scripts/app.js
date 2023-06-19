@@ -28,7 +28,7 @@ const gameBoardElement = document.getElementById('game-board');
 const gameFieldElements = document.querySelectorAll('#game-board li');
 const activePlayerNameElement = document.getElementById('active-player-name');
 const gameOverElement = document.getElementById('game-over');
-const winnersName = document.getElementById('winner-name');
+const winnersName = document.getElementById('winners-name');
 const turnMessage = document.getElementById('turn-message');
 
 const configPopup = document.getElementById("config-overlay");
