@@ -32,4 +32,18 @@ function selectGameField(event) {
   console.log(gameData);
 
   switchPlayer();
+  checkForGameOver();
+}
+
+function checkForGameOver() {
+    // checking row for equality
+  for (i = 0; i < 3; i++) {
+    if (
+      gameData[i][0] > 0 &&
+      gameData[i][0] === gameData[i][1] &&
+      gameData[i][1] === gameData[i][2]
+    ) {
+      return gameData[i][0];
+    }
+  }
 }
