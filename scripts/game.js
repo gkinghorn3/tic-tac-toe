@@ -36,7 +36,7 @@ function selectGameField(event) {
 }
 
 function checkForGameOver() {
-    // checking row for equality
+  // checking row for equality
   for (i = 0; i < 3; i++) {
     if (
       gameData[i][0] > 0 &&
@@ -46,14 +46,31 @@ function checkForGameOver() {
       return gameData[i][0];
     }
   }
-
+  //   checking columns for equality
   for (i = 0; i < 3; i++) {
     if (
       gameData[0][i] > 0 &&
-      gameData[0][i] === gameData[0][i] &&
-      gameData[0][i] === gameData[0][i]
+      gameData[0][i] === gameData[1][i] &&
+      gameData[0][i] === gameData[2][i]
     ) {
       return gameData[0][i];
     }
+  }
+  //   Diagonal: top left to bottom right
+  if (
+    gameData[0][0] > 0 &&
+    gameData[0][0] === gameData[1][1] &&
+    gameData[1][1] === gameData[2][2]
+  ) {
+    return gameData[0][0];
+  }
+
+//   diagonal: bottom left to top right
+  if (
+    gameData[2][0] > 0 &&
+    gameData[2][0] === gameData[1][1] &&
+    gameData[1][1] === gameData[0][2]
+  ) {
+    return gameData[2][0];
   }
 }
