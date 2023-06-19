@@ -29,13 +29,15 @@ function selectGameField(event) {
   selectedField.classList.add("disabled");
 
   gameData[selectedRow][selectedColumn] = activePlayer + 1;
-  
+
   const winnerId = checkForGameOver();
-  console.log(winnerId);
+
+  if (winnerId !== 0) {
+    endGame(winnerId);
+  }
 
   currentRound++;
   switchPlayer();
-  
 }
 
 function checkForGameOver() {
@@ -68,7 +70,7 @@ function checkForGameOver() {
     return gameData[0][0];
   }
 
-//   diagonal: bottom left to top right
+  //   diagonal: bottom left to top right
   if (
     gameData[2][0] > 0 &&
     gameData[2][0] === gameData[1][1] &&
@@ -82,4 +84,18 @@ function checkForGameOver() {
   }
 
   return 0;
+}
+
+function endGame(winnerId) {
+  gameOverElement.style.display = "block";
+
+  if (winnerId > 0) {
+    const winnerName = players[winnerId - 1].name;
+    winnersName.textContent =
+      winnerName + '!';
+    turnMessage.textContent = '';
+  } else {
+    gameAreaElement.firstElementChild.textContent = "it's a draw!";
+    turnMessage.textContent = '';
+  }
 }

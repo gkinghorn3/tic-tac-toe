@@ -26,6 +26,9 @@ const closeConfigOverlayBtn = document.getElementById("close-config-popup");
 startGameBtnElement = document.getElementById('start-new-game-btn'); 
 const gameFieldElements = document.querySelectorAll('#game-board li');
 const activePlayerNameElement = document.getElementById('active-player-name');
+const gameOverElement = document.getElementById('game-over');
+const winnersName = document.getElementById('winner-name');
+const turnMessage = document.getElementById('turn-message');
 
 const configPopup = document.getElementById("config-overlay");
 const configPopupBackdrop = document.getElementById("backdrop");
